@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>IR Tools</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<ul class="nav_bar">
+    <li><a href="vb.html">Variable byte encoding</a></li>
+</ul>
+<div class="das_content">
+    <h1>Dictionary as a String tool</h1>
+    <form>
+
+        <div>
+            <label id="das_word_input_label" for="das_word_input">Words</label>
+            <input id="das_word_input" name="dasWordsInput">
+        </div>
+
+        <div>
+            <label id="das_k_value_label" for="das_k_value">K Value</label>
+            <input id="das_k_value" name="dasKValue" type="number">
+        </div>
+
+        <div>
+            <label for="das_front_encoding">Front Encoding</label>
+            <input type="checkbox" id="das_front_encoding">
+        </div>
+        <button type="button" id="das_submit">Submit</button>
+    </form>
+
+    <p id="das_para"></p>
+</div>
+
+<script src="index.js" type="module"></script>
+</body>
+</html>
