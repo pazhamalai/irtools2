@@ -58,9 +58,43 @@ function getNBits() {
     return 32
 }
 
+function isComputeGapsClicked() {
+    return document.getElementById('vb_gaps').checked
+}
+
+function computeGaps(numbers) {
+    let gaps = Array()
+    gaps.push(numbers[0])
+
+    for (let i = 1; i < numbers.length; i++) {
+        let diff = numbers[i] - numbers[i-1]
+        if (diff < 0) {
+            return []
+        }
+        gaps.push(diff)
+    }
+
+    return gaps
+}
+
 function onVBSubmitClicked() {
     let numbersList = document.getElementById('vb_numbers_input').value.split(' ')
+
+    if (numbersList.length === 0) {
+        alert('Numbers field is empty')
+        return
+    }
+
     numbersList = numbersList.map(n => parseInt(n))
+
+    if (isComputeGapsClicked()) {
+        numbersList = computeGaps(numbersList)
+
+        if (numbersList.length === 0) {
+            alert('Provide numbers in sorted order')
+            return;
+        }
+    }
 
     if (isVBCodeOptionEnabled()) {
         displayVBCode(numbersList, getNBits())

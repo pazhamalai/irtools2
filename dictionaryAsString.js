@@ -54,7 +54,7 @@ function getCommonPrefix(wordsList) {
 }
 
 function getNormalBlockString(wordsList) {
-    return getDictionaryAsString(wordsList)
+    return getDictionaryAsFormattedString(wordsList, wordsList.length)
 }
 
 function getBlockString(wordsList, formatted=false) {
@@ -72,6 +72,11 @@ function getBlockString(wordsList, formatted=false) {
         blockString += initialLength.toString()
     }
     blockString += commonPrefix
+
+    if (wordsList.length === 1) {
+        return blockString
+    }
+
     blockString += '*'
     blockString += wordsList[0].slice(commonPrefix.length)
 
@@ -86,7 +91,7 @@ function getBlockString(wordsList, formatted=false) {
     return blockString
 }
 
-//TODO handle wordsList.length = 1 and k > 1
+
 function getDictionaryAsFrontEncodedString(wordsList, k, formatted = false) {
     let frontEncodedString = ""
     let index = 0
