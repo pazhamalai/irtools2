@@ -19,10 +19,27 @@
         <input type="checkbox" id="vb_gaps">
     </div>
 
+    <div class="vb_type_options">
+
+        <div>
+            <input type="radio" id="vb_option_code" name="vb_options" value="VB Code"
+                   checked>
+            <label for="vb_option_code">VB Code</label>
+        </div>
+
+        <div>
+            <input type="radio" id="vb_option_bytestream" name="vb_options" value="Bytestream">
+            <label for="vb_option_bytestream">N Bit stream</label>
+        </div>
+
+    </div>
+
     <button type="button" id="vb_submit">Submit</button>
 </form>
 
-<p id="vb_para"></p>
+<div id="vb_para">
+
+</div>
 <script src="vbMain.js" type="module"></script>
 </body>
 </html>

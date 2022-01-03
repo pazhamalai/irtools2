@@ -1,4 +1,4 @@
-export {getFormattedEncodedByteStreams}
+export {getFormattedEncodedByteStreams, getVBEncodings}
 
 function getVBEncoding(number, nBits) {
     // 1 bit is reserved for continuation
