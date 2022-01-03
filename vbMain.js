@@ -1,14 +1,19 @@
 import {getFormattedEncodedByteStreams, getVBEncodings} from "./vbEncoding.js";
 
 function displayVBCode(numbers, nBits) {
-    document.getElementById('vb_para').innerHTML = getVBEncodings(numbers, nBits).join(' ')
+    let vbEncodings = getVBEncodings(numbers, nBits)
+    let innerHTML = ''
+    for (let vbEncoding of vbEncodings) {
+        innerHTML += "<div style='display: inline-block; margin-right: 20px; margin-bottom: 5px;'><" + vbEncoding.toString() + "></div>"
+    }
+    document.getElementById('vb_para').innerHTML = innerHTML
 }
 
 function displayByteStreams(numbers, nBits) {
     let bitStreams = getFormattedEncodedByteStreams(numbers, nBits)
     let innerHTML = ''
     for (let bitStream of bitStreams) {
-        innerHTML += "<div class='vb_para_bitstream_content' style='display: inline-block; margin-right: 10px; margin-bottom: 5px; border: solid 1px black'>" + bitStream + "</div>"
+        innerHTML += "<div style='display: inline-block; margin-right: 10px; margin-bottom: 5px; border: solid 1px black'>" + bitStream + "</div>"
     }
     document.getElementById('vb_para').innerHTML = innerHTML
 }
@@ -21,14 +26,46 @@ function isByteStreamOptionEnabled() {
     return document.getElementById('vb_option_bytestream').checked
 }
 
+function isNibbleOptionEnabled() {
+    return document.getElementById('vb_bit_option_nibble').checked
+}
+
+function is8BitOptionEnabled() {
+    return document.getElementById('vb_bit_option_8').checked
+}
+
+function is16BitOptionEnabled() {
+    return document.getElementById('vb_bit_option_16').checked
+}
+
+function is32BitOptionEnabled() {
+    return document.getElementById('vb_bit_option_32').checked
+}
+
+function getNBits() {
+    if (isNibbleOptionEnabled()) {
+        return 4
+    }
+
+    if (is8BitOptionEnabled()) {
+        return 8
+    }
+
+    if (is16BitOptionEnabled()) {
+        return 16
+    }
+
+    return 32
+}
+
 function onVBSubmitClicked() {
     let numbersList = document.getElementById('vb_numbers_input').value.split(' ')
     numbersList = numbersList.map(n => parseInt(n))
 
     if (isVBCodeOptionEnabled()) {
-        displayVBCode(numbersList, 8)
+        displayVBCode(numbersList, getNBits())
     } else {
-        displayByteStreams(numbersList, 8)
+        displayByteStreams(numbersList, getNBits())
     }
 }
 

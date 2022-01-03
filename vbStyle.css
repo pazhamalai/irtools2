@@ -9,6 +9,11 @@ body {
     display: inline-block;
 }
 
+.vb_bit_options {
+    display: inline-block;
+    margin-right: 20px;
+}
+
 .vb_type_options > * {
     display: inline-block;
     margin-right: 20px;
