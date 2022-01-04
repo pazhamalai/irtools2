@@ -6,54 +6,59 @@
     <link rel="stylesheet" href="vbStyle.css">
 </head>
 <body>
-<h1>VariableByte Encoding Tool</h1>
-<form>
-
-    <div>
-        <label id="vb_numbers_input_label" for="vb_numbers_input">Numbers</label>
-        <input id="vb_numbers_input" name="vbNumbersInput">
-    </div>
-
-    <div>
-        <label for="vb_gaps">Compute gaps</label>
-        <input type="checkbox" id="vb_gaps">
-    </div>
-
-    <div class="vb_bit_options">
-
-        <input type="radio" id="vb_bit_option_nibble" name="vb_bit_radios" value="Nibble">
-        <label for="vb_bit_option_nibble">Nibble</label>
-
-        <input type="radio" id="vb_bit_option_8" name="vb_bit_radios" value="8 bit" checked>
-        <label for="vb_bit_option_8">8 bit</label>
-
-        <input type="radio" id="vb_bit_option_16" name="vb_bit_radios" value="16 bit">
-        <label for="vb_bit_option_16">16 bit</label>
-
-        <input type="radio" id="vb_bit_option_32" name="vb_bit_radios" value="32 bit">
-        <label for="vb_bit_option_32">32 bit</label>
-
-    </div>
-
-    <div class="vb_type_options">
+<ul class="nav_bar">
+    <li><a href="index.html">Front Encoding</a></li>
+</ul>
+<div class="vb_contents">
+    <h1>VariableByte Encoding Tool</h1>
+    <form>
 
         <div>
-            <input type="radio" id="vb_option_code" name="vb_options" value="VB Code" checked>
-            <label for="vb_option_code">VB Code</label>
+            <label id="vb_numbers_input_label" for="vb_numbers_input">Numbers</label>
+            <input id="vb_numbers_input" name="vbNumbersInput">
         </div>
 
         <div>
-            <input type="radio" id="vb_option_bytestream" name="vb_options" value="Bytestream">
-            <label for="vb_option_bytestream">N Bit stream</label>
+            <label for="vb_gaps">Compute gaps</label>
+            <input type="checkbox" id="vb_gaps">
         </div>
 
+        <div class="vb_bit_options">
+
+            <input type="radio" id="vb_bit_option_nibble" name="vb_bit_radios" value="Nibble">
+            <label for="vb_bit_option_nibble">Nibble</label>
+
+            <input type="radio" id="vb_bit_option_8" name="vb_bit_radios" value="8 bit" checked>
+            <label for="vb_bit_option_8">8 bit</label>
+
+            <input type="radio" id="vb_bit_option_16" name="vb_bit_radios" value="16 bit">
+            <label for="vb_bit_option_16">16 bit</label>
+
+            <input type="radio" id="vb_bit_option_32" name="vb_bit_radios" value="32 bit">
+            <label for="vb_bit_option_32">32 bit</label>
+
+        </div>
+
+        <div class="vb_type_options">
+
+            <div>
+                <input type="radio" id="vb_option_code" name="vb_options" value="VB Code" checked>
+                <label for="vb_option_code">VB Code</label>
+            </div>
+
+            <div>
+                <input type="radio" id="vb_option_bytestream" name="vb_options" value="Bytestream">
+                <label for="vb_option_bytestream">N Bit stream</label>
+            </div>
+
+        </div>
+
+        <button type="button" id="vb_submit">Submit</button>
+    </form>
+
+    <div id="vb_para">
+
     </div>
-
-    <button type="button" id="vb_submit">Submit</button>
-</form>
-
-<div id="vb_para">
-
 </div>
 <script src="vbMain.js" type="module"></script>
 </body>

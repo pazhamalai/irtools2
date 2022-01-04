@@ -1,4 +1,4 @@
-body {
+.vb_contents {
     width: 500px;
     font-family: cursive;
     font-size: x-large;
@@ -17,4 +17,21 @@ body {
 .vb_type_options > * {
     display: inline-block;
     margin-right: 20px;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 200px;
+    background-color: #f1f1f1;
+    text-align: center;
+}
+
+li a {
+    display: inline-block;
+    color: #000;
+    text-decoration: none;
+    text-align: center;
+    font-size: x-large;
 }
